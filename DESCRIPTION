@@ -1,5 +1,5 @@
 Package: groupmaker
-Title: What the Package Does (One Line, Title Case)
+Title: Make Student Groups
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Claudiu",
@@ -7,7 +7,8 @@ Authors@R:
            role = c("aut", "cre"),
            email = "C.Forgaci@tudelft.nl",
            comment = c(ORCID = "0000-0003-3218-5102"))
-Description: What the package does (one paragraph).
+Description: This package takes a list of students as input and makes groups of a given size in which
+    the diversity of members is maximised.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -16,3 +17,6 @@ RoxygenNote: 7.1.1
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Imports: 
+    magrittr,
+    dplyr

@@ -1,3 +1,23 @@
+#' Make Groups
+#'
+#' Given a list of students and a desired group size, assign students to
+#' groups in such a way that diversity of group members is maximised.
+#'
+#' @param students data frame
+#' @param group_size integer
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#' require(dplyr)
+#' students <- tibble(name = c("John", "Mary", "Bob", "Kate", "Ganesh", "Marta", "Janneke"),
+#'                    nationality = c("NL", "RO", "US", "NL", "IN", "DE", "NL"),
+#'                    designer = c(TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE),
+#'                    gender = c("M", "F", "M", "F", "M", "F", "F"))
+#' students$nationality <- as.factor(students$nationality)
+#' students$gender <- as.factor(students$gender)
+#' make_groups(students, 3)
 make_groups <- function(students, group_size) {
   # Check arguments
   if (group_size < 2) {
