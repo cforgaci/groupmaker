@@ -4,6 +4,9 @@
 # groupmaker
 
 <!-- badges: start -->
+
+[![Codecov test
+coverage](https://codecov.io/gh/cforgaci/group-maker/branch/master/graph/badge.svg)](https://codecov.io/gh/cforgaci/group-maker?branch=master)
 <!-- badges: end -->
 
 The goal of groupmaker is to make diverse group making easier.
