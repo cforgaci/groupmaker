@@ -33,7 +33,42 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(groupmaker)
-## basic example code
+
+require(dplyr)
+#> Loading required package: dplyr
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
+
+# Example data
+students <- tibble(name = c("John", "Mary", "Bob", "Kate", "Ganesh", "Marta", "Janneke"),
+                   nationality = c("NL", "RO", "US", "NL", "IN", "DE", "NL"),
+                   designer = c(TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE),
+                   gender = c("M", "F", "M", "F", "M", "F", "F"))
+students$nationality <- as.factor(students$nationality)
+students$gender <- as.factor(students$gender)
+
+# How many students should be in a group?
+group_size <- 3
+
+# Make groups
+make_groups(students, group_size)
+#> # A tibble: 7 × 5
+#>   name    nationality designer gender group  
+#>   <chr>   <fct>       <lgl>    <fct>  <fct>  
+#> 1 John    NL          TRUE     M      group_1
+#> 2 Janneke NL          FALSE    F      group_1
+#> 3 Bob     US          FALSE    M      group_1
+#> 4 Marta   DE          FALSE    F      group_1
+#> 5 Kate    NL          TRUE     F      group_2
+#> 6 Mary    RO          FALSE    F      group_2
+#> 7 Ganesh  IN          TRUE     M      group_2
+#> [1] "Gender distribution across groups: OK"
 ```
 
 What is special about using `README.Rmd` instead of just `README.md`?
@@ -56,9 +91,8 @@ use GitHub Actions to re-render `README.Rmd` every time you push. An
 example workflow can be found here:
 <https://github.com/r-lib/actions/tree/master/examples>.
 
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+<!-- You can also embed plots, for example: -->
+<!-- ```{r pressure, echo = FALSE} -->
+<!-- plot(pressure) -->
+<!-- ``` -->
+<!-- In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN. -->
