@@ -1,5 +1,5 @@
 Package: groupmaker
-Title: Make Student Groups
+Title: Make Diverse Student Groups
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Claudiu",
@@ -20,4 +20,8 @@ Suggests:
 Config/testthat/edition: 3
 Imports: 
     magrittr,
-    dplyr
+    dplyr,
+    utils,
+    rlang
+Depends: 
+    R (>= 2.10)
