@@ -26,15 +26,8 @@ This is a basic example which shows you how to solve a common problem:
 ``` r
 library(groupmaker)
 
-require(dplyr, quietly = TRUE)
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
+require(dplyr, warn.conflicts = FALSE)
+#> Loading required package: dplyr
 
 # Example data included in the package
 students
