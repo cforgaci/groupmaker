@@ -37,13 +37,18 @@ require(dplyr)
 #> 
 #>     intersect, setdiff, setequal, union
 
-# Example data
-students <- tibble(name = c("John", "Mary", "Bob", "Kate", "Ganesh", "Marta", "Janneke"),
-                   nationality = c("NL", "RO", "US", "NL", "IN", "DE", "NL"),
-                   designer = c(TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE),
-                   gender = c("M", "F", "M", "F", "M", "F", "F"))
-students$nationality <- as.factor(students$nationality)
-students$gender <- as.factor(students$gender)
+# Example data included in the package
+students
+#> # A tibble: 7 × 4
+#>   name    nationality designer gender
+#>   <chr>   <fct>       <lgl>    <fct> 
+#> 1 John    NL          TRUE     M     
+#> 2 Mary    RO          FALSE    F     
+#> 3 Bob     US          FALSE    M     
+#> 4 Kate    NL          TRUE     F     
+#> 5 Ganesh  IN          TRUE     M     
+#> 6 Marta   DE          FALSE    F     
+#> 7 Janneke NL          FALSE    F
 
 # How many students should be in a group?
 group_size <- 3
