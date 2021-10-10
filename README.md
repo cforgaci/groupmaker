@@ -8,8 +8,8 @@
 <!-- badges: end -->
 
 The goal of groupmaker is to make diverse groups from a given list of
-members. Groupmaker was developed for student group-making in which 
-expertise and gender balance are maximized for interdisciplinary work.
+members. It was developed for student group-making in which expertise
+and gender balance are maximized for interdisciplinary work.
 
 ## Installation
 

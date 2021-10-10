@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 <!-- [![Codecov test coverage](https://codecov.io/gh/cforgaci/group-maker/branch/master/graph/badge.svg)](https://codecov.io/gh/cforgaci/group-maker?branch=master) -->
 <!-- badges: end -->
 
-The goal of groupmaker is to make diverse groups from a given list of members. It was developed for student group-making in which expertise and gender balance are maximized for interdisciplinnary work. 
+The goal of groupmaker is to make diverse groups from a given list of members. It was developed for student group-making in which expertise and gender balance are maximized for interdisciplinary work. 
 
 ## Installation
 
