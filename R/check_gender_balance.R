@@ -17,15 +17,15 @@
 check_gender_balance <- function(students) {
   # Check the gender balance in groups
   gender_distr <- students %>%
-    dplyr::group_by(group) %>%
-    dplyr::count(gender) %>%
+    dplyr::group_by(.data$group) %>%
+    dplyr::count(.data$gender) %>%
     dplyr::ungroup() %>%
-    dplyr::arrange(gender) %>%
-    dplyr::group_by(gender) %>%
-    dplyr::mutate(diff = n - lag(n)) %>%
+    dplyr::arrange(.data$gender) %>%
+    dplyr::group_by(.data$gender) %>%
+    dplyr::mutate(diff = .data$n - lag(.data$n)) %>%
     dplyr::ungroup() %>%
-    dplyr::mutate(diff_l = if_else(abs(diff) > 1, TRUE, FALSE)) %>%
-    dplyr::summarise(sum(diff_l, na.rm = TRUE)) %>%
+    dplyr::mutate(diff_l = if_else(abs(.data$diff) > 1, TRUE, FALSE)) %>%
+    dplyr::summarise(sum(.data$diff_l, na.rm = TRUE)) %>%
     dplyr::pull()
 
   if (gender_distr == 0) {
