@@ -18,7 +18,7 @@ You can install the development version from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("cforgaci/group-maker")
+devtools::install_github("cforgaci/groupmaker")
 ```
 
 ## Example
