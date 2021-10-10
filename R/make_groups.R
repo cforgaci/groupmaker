@@ -1,49 +1,50 @@
 #' Make Groups
 #'
-#' Given a list of students and a desired group size, assign students to
-#' groups in such a way that diversity of group members is maximised.
+#' Given a list of students and a desired group size, assign the students to
+#' groups in such a way that the diversity of group members is maximised.
 #'
-#' @param students data frame
-#' @param group_size integer
+#' @param students A data frame.
+#' @param group_size A number. integer
 #'
-#' @return
+#' @return The students data frame with a new column \code{group}.
+#' @import dplyr
+#' @importFrom rlang .data
 #' @export
 #'
 #' @examples
-#' require(dplyr)
+#' # Dummy data included in the groupmaker package
+#' students
 #'
-#' # Example data
-#' students <- tibble(name = c("John", "Mary", "Bob", "Kate", "Ganesh", "Marta", "Janneke"),
-#'                    nationality = c("NL", "RO", "US", "NL", "IN", "DE", "NL"),
-#'                    designer = c(TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE),
-#'                    gender = c("M", "F", "M", "F", "M", "F", "F"))
-#' students$nationality <- as.factor(students$nationality)
-#' students$gender <- as.factor(students$gender)
-#'
-#' # How many students should be in a group?
+#' # How many members should a group have?
 #' group_size <- 3
 #'
-#' # Make groups
-#' make_groups(students, group_size)
+#' # Make groups of students
+#' make_groups(students = students, group_size = group_size)
 make_groups <- function(students, group_size) {
   # Check arguments
   if (group_size < 2) {
     stop("A group should have at least two members.")
   }
 
+  # How many students need to be grouped?
+  no_students <- nrow(students)
+
   # How many groups does a given group size result in?
-  no_groups <- nrow(students) %/% group_size
+  no_groups <- no_students %/% group_size
 
   # Prepare
   students <- students %>%
     # sort by frequency of nationalities
-    add_count(nationality, sort = TRUE) %>%
-    select(-n) %>%
+    dplyr::add_count(.data$nationality, sort = TRUE) %>%
+    dplyr::select(-.data$n) %>%
     # distribute students across groups
-    mutate(group = rep_len(paste0("group_", (1:no_groups)), nrow(.))) %>%
-    arrange(group)
+    dplyr::mutate(group = rep_len(x = paste0("group_", (1:no_groups)), length.out = no_students)) %>%
+    dplyr::arrange(.data$group) %>%
+    dplyr::mutate(group = as.factor(.data$group))
 
   print(students)
   check_expertise_diversity(students)
   check_gender_balance(students)
 }
+
+

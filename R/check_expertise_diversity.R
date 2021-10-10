@@ -1,3 +1,19 @@
+#' Check Expertise Diversity Across Groups
+#'
+#' After groups have been made, check expertise distribution.
+#'
+#' @param students A data frame.
+#'
+#' @return Return a message and the value TRUE if gender distribution is OK, FALSE otherwise.
+#'
+#' @import dplyr
+#' @importFrom rlang .data
+#'
+#' @export
+#'
+#' @examples
+#' # Check expertise diversity on the example dataset included in the makegroups package
+#' check_expertise_diversity(make_groups(students, 3))
 check_expertise_diversity <- function(students) {
   # Check the distribution of designers per group
   expertise_distr <- students %>%

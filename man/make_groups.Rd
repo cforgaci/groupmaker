@@ -7,31 +7,24 @@
 make_groups(students, group_size)
 }
 \arguments{
-\item{students}{data frame}
+\item{students}{A data frame.}
 
-\item{group_size}{integer}
+\item{group_size}{A number. integer}
 }
 \value{
-
+The students data frame with a new column \code{group}.
 }
 \description{
-Given a list of students and a desired group size, assign students to
-groups in such a way that diversity of group members is maximised.
+Given a list of students and a desired group size, assign the students to
+groups in such a way that the diversity of group members is maximised.
 }
 \examples{
-require(dplyr)
+# Dummy data included in the groupmaker package
+students
 
-# Example data
-students <- tibble(name = c("John", "Mary", "Bob", "Kate", "Ganesh", "Marta", "Janneke"),
-                   nationality = c("NL", "RO", "US", "NL", "IN", "DE", "NL"),
-                   designer = c(TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE),
-                   gender = c("M", "F", "M", "F", "M", "F", "F"))
-students$nationality <- as.factor(students$nationality)
-students$gender <- as.factor(students$gender)
-
-# How many students should be in a group?
+# How many members should a group have?
 group_size <- 3
 
-# Make groups
-make_groups(students, group_size)
+# Make groups of students
+make_groups(students = students, group_size = group_size)
 }
