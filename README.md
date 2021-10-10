@@ -26,8 +26,7 @@ This is a basic example which shows you how to solve a common problem:
 ``` r
 library(groupmaker)
 
-require(dplyr)
-#> Loading required package: dplyr
+require(dplyr, quietly = TRUE)
 #> 
 #> Attaching package: 'dplyr'
 #> The following objects are masked from 'package:stats':
