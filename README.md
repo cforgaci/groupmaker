@@ -26,9 +26,6 @@ This is a basic example which shows you how to solve a common problem:
 ``` r
 library(groupmaker)
 
-require(dplyr, warn.conflicts = FALSE)
-#> Loading required package: dplyr
-
 # Example data included in the package
 students
 #> # A tibble: 7 × 4

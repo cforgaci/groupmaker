@@ -36,8 +36,6 @@ This is a basic example which shows you how to solve a common problem:
 ```{r example}
 library(groupmaker)
 
-require(dplyr, warn.conflicts = FALSE)
-
 # Example data included in the package
 students
 
