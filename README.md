@@ -7,8 +7,7 @@
 <!-- [![Codecov test coverage](https://codecov.io/gh/cforgaci/group-maker/branch/master/graph/badge.svg)](https://codecov.io/gh/cforgaci/group-maker?branch=master) -->
 <!-- badges: end -->
 
-The goal of groupmaker is to make diverse groups from a given list of
-members. It was developed for student group-making in which expertise
+The goal of groupmaker is to make diverse groups of a given size. It was motivated by the frequent task of student group-making in which expertise diversity
 and gender balance are maximized for interdisciplinary work.
 
 ## Installation
