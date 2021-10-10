@@ -7,7 +7,9 @@
 <!-- [![Codecov test coverage](https://codecov.io/gh/cforgaci/group-maker/branch/master/graph/badge.svg)](https://codecov.io/gh/cforgaci/group-maker?branch=master) -->
 <!-- badges: end -->
 
-The goal of groupmaker is to make diverse group making easier.
+The goal of groupmaker is to make diverse groups from a given list of
+members. It was developed for student group-making in which expertise
+and gender balance are maximized for interdisciplinnary work.
 
 ## Installation
 
@@ -21,7 +23,8 @@ devtools::install_github("cforgaci/group-maker")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how to make groups of three
+students:
 
 ``` r
 library(groupmaker)
